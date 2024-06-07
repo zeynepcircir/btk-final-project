@@ -1,0 +1,36 @@
+<div class="login-container">
+    <div class="left-section">
+      <div class="background-animation">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+      </div>
+      <div class="welcome-text">
+        <img src="assets/acco.webp" alt="Logo" class="logo">
+        <h1>Welcome Page</h1>
+        <p>Sign in to continue access</p>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="login-card">
+        <h2>Sign In</h2>
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Email Address</mat-label>
+            <input matInput type="email" [(ngModel)]="email" name="email" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [(ngModel)]="password" name="password" required>
+          </mat-form-field>
+          <div class="remember-me">
+            <mat-checkbox>Remember Me</mat-checkbox>
+          </div>
+          <button mat-stroked-button class="signin-button" type="submit">Sign In</button>
+        </form>
+        <a href="#" class="forgot-password">Lost your password?</a>
+        <p>By clicking on "Sign in now" you agree to <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+  </div>
+  

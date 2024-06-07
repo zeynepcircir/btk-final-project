@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>{{ data.employee ? 'Edit Employee' : 'Add Employee' }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="employeeForm">
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+      <mat-error *ngIf="employeeForm.controls['firstName'].hasError('required')">First Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+      <mat-error *ngIf="employeeForm.controls['lastName'].hasError('required')">Last Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="employeeForm.controls['email'].hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="employeeForm.controls['email'].hasError('email')">Invalid email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Position</mat-label>
+      <input matInput formControlName="position">
+      <mat-error *ngIf="employeeForm.controls['position'].hasError('required')">Position is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput type="date" formControlName="startDate">
+      <mat-error *ngIf="employeeForm.controls['startDate'].hasError('required')">Start Date is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Salary</mat-label>
+      <input matInput type="number" formControlName="salary">
+      <mat-error *ngIf="employeeForm.controls['salary'].hasError('required')">Salary is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Performance Review</mat-label>
+      <input matInput formControlName="performanceReview">
+      <mat-error *ngIf="employeeForm.controls['performanceReview'].hasError('required')">Performance Review is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Annual Leave</mat-label>
+      <input matInput type="number" formControlName="annualLeave">
+      <mat-error *ngIf="employeeForm.controls['annualLeave'].hasError('required')">Annual Leave is required</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-button color="primary" (click)="save()">Save</button>
+</div>

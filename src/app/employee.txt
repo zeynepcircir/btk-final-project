@@ -1,0 +1,48 @@
+<!-- accounting-employees.component.html -->
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Position</th>
+    <th>Start Date</th>
+    <th>Salary</th>
+    <th>Performance</th>
+    <th>Annual Leave</th>
+  </tr>
+  <tr *ngFor="let employee of employees">
+    <td>{{ employee.id }}</td>
+    <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+    <td>{{ employee.email }}</td>
+    <td>{{ employee.position }}</td>
+    <td>{{ employee.startDate | date }}</td>
+    <td>{{ employee.salary | currency }}</td>
+    <td>{{ employee.performanceReview }}</td>
+    <td>{{ employee.annualLeave }}</td>
+  </tr>
+</table>
+
+---
+
+// accounting-employees.component.ts
+import {  Component, OnInit } from '@angular/core';
+import { AccountingEmployeeService } from 'src/app/services/accounting-employee.service';
+import { AccountingEmployee } from '../models/accounting-employee';
+
+@Component({
+  selector: 'app-accounting-employees',
+  templateUrl: './accounting-employees.component.html',
+  styleUrls: ['./accounting-employees.component.css'],
+})
+export class AccountingEmployeesComponent implements OnInit {
+  employees: AccountingEmployee[] = [];
+
+
+  constructor(private employeeService: AccountingEmployeeService) {}
+
+  ngOnInit(): void {
+    this.employeeService.getEmployees().subscribe((employees) => {
+      this.employees = employees;
+    });
+  }
+}
