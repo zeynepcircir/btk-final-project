@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="chart-grid col-12">
+  <div class="chart-card">
+    <h3>Performance Review</h3>
+    <canvas id="performanceChart"></canvas>
+    <p>Excellent: {{ performanceMetrics.excellent }}, Good: {{ performanceMetrics.good }},
+      Average: {{ performanceMetrics.average }},
+      Below Average: {{ performanceMetrics.belowAverage }},
+      Poor: {{ performanceMetrics.poor }}</p>
+  </div>
+  <div class="chart-card">
+    <h3>Salary Overview</h3>
+    <canvas id="salaryChart"></canvas>
+    <p>Average Salary: {{ averageSalary | currency }}</p>
+  </div>
+  <div class="chart-card">
+    <h3>Annual Leave</h3>
+    <canvas id="leaveChart"></canvas>
+    <p>Total Leaves: {{ totalAnnualLeaves }}</p>
+  </div>
+  <div class="chart-card">
+    <h3>Gender Distribution</h3>
+    <canvas id="genderChart"></canvas>
+    <p>Male: {{ genderCounts.male }}, Female: {{ genderCounts.female }}</p>
+  </div>
+</div>

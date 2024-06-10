@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { AccountingEmployeesComponent } from './components/accounting-employees/accounting-employees.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -19,10 +18,25 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guard/auth.guard';
 import { AccountingEmployeeService } from './services/accounting-employee.service';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatMenuModule} from '@angular/material/menu';
-
+import { MatMenuModule } from '@angular/material/menu';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { PerfomancePipe } from './pipes/perfomance.pipe';
+import { MatSortModule } from '@angular/material/sort';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AccountingEmployeesComponent, EmployeeDialogComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    AccountingEmployeesComponent,
+    EmployeeDialogComponent,
+    HeaderComponent,
+    HomeComponent,
+    ConfirmDialogComponent,
+    PerfomancePipe
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,9 +51,12 @@ import {MatMenuModule} from '@angular/material/menu';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatToolbarModule,
+    MatSortModule
   ],
-  providers: [AuthGuard,AccountingEmployeeService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [AuthGuard, AccountingEmployeeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

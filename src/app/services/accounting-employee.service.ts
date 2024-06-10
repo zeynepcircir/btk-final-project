@@ -1,4 +1,3 @@
-// accounting-employee.service.ts
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AccountingEmployee } from '../components/models/accounting-employee';
@@ -284,5 +283,22 @@ export class AccountingEmployeeService {
 
   getEmployees(): Observable<AccountingEmployee[]> {
     return of(this.employees);
+  }
+
+  addEmployee(employee: AccountingEmployee): Observable<AccountingEmployee[]> {
+    if (employee.id == null) { 
+      employee.id = this.getNextId(); 
+    }
+    this.employees.push(employee);
+    return of(this.employees);
+  }
+
+  deleteEmployee(id: number): Observable<any> {
+    this.employees = this.employees.filter(employee => employee.id !== id);
+    return of({ success: true });
+  }
+
+  private getNextId(): number {
+    return this.employees.reduce((acc, cur) => Math.max(acc, cur.id), 0) + 1;
   }
 }
