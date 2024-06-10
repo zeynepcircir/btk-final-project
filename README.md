@@ -1,3 +1,8 @@
+<img src="https://github.com/zeynepcircir/btk-final-project/assets/81877446/ed4e0288-05a4-49e8-bff1-1b2c8a985134" alt="Image 3" width="1000">
+<img src="https://github.com/zeynepcircir/btk-final-project/assets/81877446/dbfa7f7b-7613-40e7-ab72-799dc8e42b17" alt="Image 3" width="1000">
+<img src="https://github.com/zeynepcircir/btk-final-project/assets/81877446/e22cbaba-ede1-42b6-bdd8-7c788abebefd" alt="Image 3" width="1000">
+
+
 # AccountingInfo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
